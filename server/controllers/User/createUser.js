@@ -8,25 +8,30 @@ const createUser = async(req, res) => {
     
     const userNameRepeated = await User.findOne({userName: userName})
     const emailRepeated = await User.findOne({email: email})
+    if(!name || !lastName || !userName || !email || !password) {
+        return res.status(403).send({
+            status:"error",
+            message: "Faltan datos."
+        })
+    }
     if (emailRepeated) {
-        return res.status(404).send({
+        return res.status(403).send({
             status:"error",
             message: "Ya existe un usuario registrado con ese email"
         })
     }
     if (userNameRepeated) {
-        return res.status(404).send({
+        return res.status(403).send({
             status:"error",
             message: "Ya existe un usuario con ese userName"
         })
     }
     let passwordHash = await bcryptjs.hash(password, 8)
-    const example = await User.create({name, lastName, userName, email, password: passwordHash })
-    // return res.status(200).send({
-    //     status: "Success",
-    //     message: "Usuario creado con exito"
-    // })
-    return res.status(200).send({example})
+    const user = await User.create({name, lastName, userName, email, password: passwordHash })
+    return res.status(201).send({
+        status: "Success",
+        message: "Usuario creado con éxito."
+    })
 
 }
 

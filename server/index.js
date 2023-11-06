@@ -1,4 +1,4 @@
-import 'dotenv/config'
+    import 'dotenv/config'
 import  express  from 'express';
 import morgan from 'morgan';
 import { Server as Socketserver } from 'socket.io';
@@ -29,6 +29,7 @@ app.use(cors())
 app.use(morgan("dev"))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+
 
 app.use(router)
 //conexion a la base de datos y esuchamos la aplicacion a travez del puerto 4000

@@ -1,0 +1,49 @@
+# Archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpeta donde se instalan las dependencias de Node.js (puedes personalizarla según tu proyecto)
+node_modules/
+
+# Archivos de registros o archivos generados automáticamente
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Carpeta donde se almacenan los archivos compilados o generados
+dist/
+build/
+out/
+
+# Archivos de configuración específicos de tu IDE o editor de texto
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs_analysis
+*.sln
+*.swp
+
+# Carpeta de respaldo temporal
+.backup*/
+
+# Archivos de respaldo creados por editores de texto
+*~
+
+# Archivos de caché de aplicaciones
+*.cache/
+
+# Carpeta de respaldo de Windows
+$RECYCLE.BIN/
+
+# Archivos de registro
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+*~
+.env
+package-lock.json
